@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textViewStart;
     private Button buttonStart;
 
     @Override
@@ -17,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewStart = findViewById(R.id.textViewStart);
         buttonStart = findViewById(R.id.buttonStart);
 
         copyDatabase();

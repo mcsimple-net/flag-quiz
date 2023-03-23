@@ -21,10 +21,10 @@ public class QuizActivity extends AppCompatActivity {
     private Button buttonA, buttonB, buttonC, buttonD;
     private  FlagsDatabase fDatabase;
     private ArrayList<FlagsModel> questionsList;
-    int correct = 0;
-    int wrong = 0;
-    int empty = 0;
-    int question = 0;
+    public int correct = 0;
+    public int wrong = 0;
+    public int empty = 0;
+    public int question = 0;
     private FlagsModel correctFlag;
     private ArrayList<FlagsModel> wrongOptionsList;
     HashSet<FlagsModel> mixOptions = new HashSet<>();
@@ -51,7 +51,7 @@ public class QuizActivity extends AppCompatActivity {
         buttonC = findViewById(R.id.buttonC);
         buttonD = findViewById(R.id.buttonD);
 
-        fDatabase = new FlagsDatabase(QuizActivity.this);
+        fDatabase = new FlagsDatabase(this);
         questionsList = new FlagsDAO().getRandomTenQuestions(fDatabase);
 
         loadQuestions();
@@ -97,10 +97,24 @@ public class QuizActivity extends AppCompatActivity {
                 buttonD.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#2849F6")));
 
             }
+
+            // Last answer was empty
+            else if (question == questionsList.size() && !buttonControl)
+            {
+                Intent intent = new Intent(this, ResultActivity.class);
+                intent.putExtra("correct", correct);
+                intent.putExtra("wrong", wrong);
+                intent.putExtra("empty", empty + 1);
+                startActivity(intent);
+                finish();
+
+            }
+
+            // Last answer was not empty
             else if (question == questionsList.size())
             {
-                Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
-                intent.putExtra(String.valueOf(correct), correct);
+                Intent intent = new Intent(this, ResultActivity.class);
+                intent.putExtra("correct", correct);
                 intent.putExtra("wrong", wrong);
                 intent.putExtra("empty", empty);
                 startActivity(intent);

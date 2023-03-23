@@ -37,7 +37,7 @@ public class ResultActivity extends AppCompatActivity {
 
         buttonAgain.setOnClickListener(v -> {
 
-            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+            Intent intent = new Intent(this, QuizActivity.class);
             startActivity(intent);
             finish();
 

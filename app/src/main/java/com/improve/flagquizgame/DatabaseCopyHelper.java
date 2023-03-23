@@ -15,7 +15,7 @@ public class DatabaseCopyHelper extends SQLiteOpenHelper  {
 
 
     //The Android's default system path of your application database.
-    String DB_PATH =null;
+    String DB_PATH;
 
     private static String DB_NAME = "flagquizgame.db";
 
@@ -78,7 +78,7 @@ public class DatabaseCopyHelper extends SQLiteOpenHelper  {
 
         }catch(SQLiteException e){
 
-            //database does't exist yet.
+            //database doesn't exist yet.
 
         }
 

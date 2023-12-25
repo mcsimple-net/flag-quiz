@@ -1,4 +1,4 @@
-https://img.shields.io/badge/MCSimple-Flag_Quiz_Game-brightgreen?logo=MCSimple&link=https%3A%2F%2Fmcsimple.net
+[![MCSimple](https://img.shields.io/badge/MCSimple-Flag_Quiz_Game-brightgreen?logo=MCSimple&link=https%3A%2F%2Fmcsimple.net)](https://mcsimple.net)
 
 
 The game where you can guess a country name by its flag.
